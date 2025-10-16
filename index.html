@@ -1,0 +1,725 @@
+<!DOCTYPE HTML>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rahma Fasya Soleha - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio Rahma Fasya Soleha - Siswa RPL SMKN 1 Kawali" />
+    <meta name="author" content="Rahma Fasya Soleha" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --primary-light: #3498db;
+            --primary-dark: #1a252f;
+            --accent-color: #ecf0f1;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* ==== NAVBAR ==== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            color: var(--text-dark);
+            z-index: 999;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .navbar .logo {
+            font-weight: 600;
+            font-size: 22px;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        .navbar ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .navbar ul li a:hover {
+            color: var(--primary-color);
+        }
+        .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        .navbar ul li a:hover::after {
+            width: 100%;
+        }
+        header, section, #fh5co-about, #fh5co-resume, #fh5co-skills, #fh5co-footer {
+            scroll-margin-top: 80px;
+        }
+
+        /* === HEADER === */
+        #fh5co-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        #fh5co-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/bg.jpg') no-repeat center center/cover;
+            opacity: 0.1;
+        }
+        h1, h2, h3 { color: var(--white); }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { color: var(--primary-dark); }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .contact-info li a { 
+            color: var(--white); 
+            font-size: 16px; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: rgba(255,255,255,0.1);
+        }
+        .contact-info li a:hover { 
+            color: var(--primary-color);
+            background-color: var(--white);
+            transform: translateY(-2px);
+        }
+        .contact-info i { 
+            margin-right: 8px; 
+            font-size: 18px;
+        }
+        
+        /* Warna khusus untuk ikon kontak */
+        .contact-info li a i.icon-phone {
+            color: #25D366; /* Warna hijau WhatsApp */
+        }
+
+        .contact-info li a i.icon-envelope {
+            color: #EA4335; /* Warna merah Gmail */
+        }
+
+        .contact-info li a i.icon-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Efek hover untuk ikon */
+        .contact-info li a:hover i.icon-phone {
+            color: #128C7E; /* Warna hijau WhatsApp yang lebih gelap saat hover */
+        }
+
+        .contact-info li a:hover i.icon-envelope {
+            color: #c5221f; /* Warna merah Gmail yang lebih gelap saat hover */
+        }
+
+        .contact-info li a:hover i.icon-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #121988 75%, #2b3268 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* === SECTIONS === */
+        .fh5co-bg-color {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+        .animate-box {
+            padding: 60px 0;
+        }
+        .fh5co-heading {
+            margin-bottom: 50px;
+        }
+        .fh5co-heading h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+        .fh5co-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* === ABOUT === */
+        .info {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .info li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .info li:last-child {
+            border-bottom: none;
+        }
+        .first-block {
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        .second-block {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        /* Style untuk tulisan "Halo, Saya Rahma!" */
+        .about-intro h2 {
+            background: linear-gradient(45deg, #3498db, #9b59b6, #e74c3c);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* === TIMELINE === */
+        .timeline {
+            padding: 20px 0;
+        }
+        .timeline-panel {
+            color: var(--text-dark) !important;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .timeline-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .timeline-title {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .timeline .company {
+            color: var(--text-light) !important;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .timeline-heading h3 {
+            background: var(--primary-color);
+            color: var(--white) !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+        }
+        .timeline-badge {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+        }
+
+        /* === SKILLS === */
+        #fh5co-skills {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+        #fh5co-skills h2,
+        #fh5co-skills h3 {
+            color: var(--text-dark) !important;
+            font-weight: 600;
+        }
+        #fh5co-skills h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+        #fh5co-skills ul {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            list-style: none;
+        }
+        #fh5co-skills ul li {
+            color: var(--text-dark) !important;
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #fh5co-skills ul li:last-child {
+            border-bottom: none;
+        }
+        #fh5co-skills ul li span {
+            background-color: var(--accent-color);
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* === FOOTER === */
+        #fh5co-footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 0;
+        }
+        #fh5co-footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .navbar ul {
+                gap: 15px;
+            }
+            .navbar ul li a {
+                font-size: 14px;
+            }
+            .contact-info ul {
+                gap: 15px;
+            }
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+		/* ==== FOTO PROYEK ==== */
+.project-gallery {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.project-gallery img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+/* === WARNA SAAT TEKS DIBLOK === */
+::selection {
+    background-color: var(--primary-color); /* biru navy */
+    color: var(--white);
+}
+
+::-moz-selection { /* untuk Firefox */
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+/* === TIMELINE NAVY THEME === */
+
+/* Ganti warna lingkaran ikon (badge) */
+.timeline-badge {
+    background-color: var(--primary-color) !important; /* Navy */
+    color: var(--white) !important;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+/* Garis vertikal timeline */
+.timeline::before {
+    background-color: var(--primary-color) !important;
+}
+
+/* Kotak isi pengalaman (panel) */
+.timeline-panel {
+    background: var(--white);
+    border: 1.5px solid rgba(44, 62, 80, 0.1);
+    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.08);
+}
+
+/* Teks judul dalam timeline */
+.timeline-title {
+    color: var(--primary-color) !important;
+}
+
+/* Label di tengah garis (misalnya: PENGALAMAN PROYEK) */
+.timeline-heading h3 {
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="fh5co-loader"></div>
+
+    <!-- ==== NAVBAR ==== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#fh5co-header" class="logo">Rahma Fasya Soleha</a>
+            <ul>
+                <li><a href="#fh5co-header">Beranda</a></li>
+                <li><a href="#fh5co-about">Tentang Saya</a></li>
+                <li><a href="#fh5co-resume">Pengalaman</a></li>
+                <li><a href="#fh5co-skills">Keterampilan</a></li>
+                <li><a href="#fh5co-footer">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==== HEADER ==== -->
+    <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t js-fullheight">
+                        <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+                            <img src="latarmerah.png" alt="Foto Rahma Fasya Soleha" class="profile-image">
+                            <h1><span>Rahma Fasya Soleha</span></h1>
+                            <h3><span>Guido Techno | SMK Negeri 1 Kawali </span></h3><br>
+                            <div class="contact-info">
+                                <ul>
+                                    <li><a href="https://wa.me/6288971839703" target="_blank"><i class="icon-phone"></i> +62 889-7183-9703</a></li>
+                                    <li><a href="mailto:rfasya957@gmail.com"><i class="icon-envelope"></i> rfasya957@gmail.com</a></li>
+                                    <li><a href="https://www.instagram.com/_ffrffr" target="_blank"><i class="icon-instagram"></i> _ffrffr</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==== TENTANG SAYA ==== -->
+    <div id="fh5co-about" class="animate-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Tentang Saya</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="info">
+                        <li><span class="first-block">Nama:</span><span class="second-block">Rahma Fasya Soleha</span></li>
+                        <li><span class="first-block">TTL:</span><span class="second-block">Ciamis, 11 Oktober 2007</span></li>
+                        <li><span class="first-block">Jenis Kelamin:</span><span class="second-block">Perempuan</span></li>
+                        <li><span class="first-block">Agama:</span><span class="second-block">Islam</span></li>
+                        <li><span class="first-block">Alamat:</span><span class="second-block">Dusun Cibgor RT 02/RW 01, Desa Panawangan, Kec. Panawangan, Kab. Ciamis, Jawa Barat, 46255</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-8 about-intro">
+                    <h2>Halo, Saya Rahma!</h2>
+                    <p>Individu yang antusias dan bertanggung jawab, memiliki kemampuan kuat dalam pengembangan perangkat lunak serta pemecahan masalah. Terampil menggunakan berbagai bahasa pemrograman dan tools modern, dengan kemampuan kolaborasi yang baik dalam tim.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==== PENGALAMAN ==== -->
+    <div id="fh5co-resume" class="fh5co-bg-color">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Pengalaman & Pendidikan</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0">
+                    <ul class="timeline">
+                        <li class="timeline-heading text-center animate-box">
+                            <div><h3>Pengalaman Proyek</h3></div>
+                        </li>
+                       <li class="animate-box timeline-unverted">
+    <div class="timeline-badge"><i class="icon-suitcase"></i></div>
+    <div class="timeline-panel">
+        <h3 class="timeline-title">Website Informasi Desa</h3>
+        <span class="company">Juli 2024 – Desember 2024</span>
+        <p>Membangun website profil Desa Gunungsari menggunakan HTML, CSS, dan PHP. 
+           Menampilkan informasi berita, galeri, dan struktur organisasi desa.</p>
+        <div class="project-gallery">
+            <img src="webdes.png" alt="Tampilan Website Informasi Desa">
+        </div>
+    </div>
+</li>
+
+                        <li class="timeline-inverted animate-box">
+                            <div class="timeline-badge"><i class="icon-suitcase"></i></div>
+                            <div class="timeline-panel">
+                                <h3 class="timeline-title">Website Data Siswa</h3>
+                                <span class="company">Tugas PSAJ di SMK Negeri 1 Kawali</span>
+                                <p>Menggunakan HTML, CSS, PHP, dan MySQL. Fitur: tambah, edit, hapus, dan tampilkan data siswa (CRUD). Proyek lokal, belum diunggah ke GitHub.</p>
+                            <div class="project-gallery">
+            <img src="datasiswa.jpeg" alt="Tampilan Website Informasi Desa">
+        </div>
+    </div>
+</li>
+                        </li>
+                        <li class="animate-box timeline-unverted">
+                            <div class="timeline-badge"><i class="icon-suitcase"></i></div>
+                            <div class="timeline-panel">
+                                <h3 class="timeline-title">Website Rental Motor</h3>
+                                <span class="company">Tugas UKK di SMK Negeri 1 Kawali</span>
+                                <p>Menggunakan HTML, CSS, PHP, dan MySQL. Fitur: daftar motor, pemesanan, dan data pesanan. Proyek lokal, belum diunggah ke GitHub.</p>
+                            <div class="project-gallery">
+            <img src="rental.png" alt="Tampilan Website Informasi Desa">
+        </div>
+    </div>
+</li>
+                        </li>
+                        <li class="timeline-heading text-center animate-box">
+                            <div><h3>Pengalaman Organisasi</h3></div>
+                        </li>
+                        <li class="animate-box timeline-unverted">
+                            <div class="timeline-badge"><i class="icon-users"></i></div>
+                            <div class="timeline-panel">
+                                <h3 class="timeline-title">Anggota Ekstrakurikuler Pramuka</h3>
+                                <span class="company">SMP Negeri 1 Panawangan | 2020 – 2023</span>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted animate-box">
+                            <div class="timeline-badge"><i class="icon-users"></i></div>
+                            <div class="timeline-panel">
+                                <h3 class="timeline-title">Anggota Ekstrakurikuler IT</h3>
+                                <span class="company">SMK Negeri 1 Kawali | 2020 – 2023</span>
+                            </div>
+                        </li>
+                        <li class="timeline-heading text-center animate-box">
+                            <div><h3>Pendidikan</h3></div>
+                        </li>
+                        <li class="animate-box timeline-unverted">
+                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                            <div class="timeline-panel">
+                                <h3 class="timeline-title">SMK Negeri 1 Kawali</h3>
+                                <span class="company">Rekayasa Perangkat Lunak | 2023 – 2026</span>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted animate-box">
+                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                            <div class="timeline-panel">
+                                <h3 class="timeline-title">SMP Negeri 1 Panawangan</h3>
+                                <span class="company">2020 – 2023</span>
+                            </div>
+                        </li>
+                        <li class="animate-box timeline-unverted">
+                            <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                            <div class="timeline-panel">
+                                <h3 class="timeline-title">SD Negeri 2 Panawangan</h3>
+                                <span class="company">2014 – 2020</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==== KETERAMPILAN ==== -->
+    <div id="fh5co-skills" class="animate-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Keterampilan</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <h3>Hard Skill</h3>
+                    <ul>
+                        <li>Pengembangan Web <span>Pemula</span></li>
+                        <li>Dasar Algoritma <span>Menengah</span></li>
+                        <li>HTML & CSS <span>Menengah</span></li>
+                        <li>PHP & MySQL <span>Pemula</span></li>
+                        <li>Desain Antarmuka <span>Menengah</span></li>
+                        <li>Perancangan Sistem <span>Menengah</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Soft Skill</h3>
+                    <ul>
+                        <li>Kerja Sama Tim <span>Menengah</span></li>
+                        <li>Komunikasi Efektif <span>Menengah</span></li>
+                        <li>Pemecahan Masalah <span>Pemula</span></li>
+                        <li>Manajemen Waktu <span>Menengah</span></li>
+                        <li>Adaptif <span>Menengah</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" style="margin-top:30px;">
+                <div class="col-md-6">
+                    <h3>Alat</h3>
+                    <ul>
+                        <li>Canva <span>Desain Grafis</span></li>
+                        <li>Draw.io <span>Diagram</span></li>
+                        <li>Figma <span>UI/UX Design</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Perangkat</h3>
+                    <ul>
+                        <li>Visual Studio Code <span>Code Editor</span></li>
+                        <li>Laragon <span>Local Server</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ==== KONTAK ==== -->
+<div id="fh5co-contact" class="fh5co-bg-color">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>Kontak Saya</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Kolom Kiri: Info Kontak dan Peta -->
+            <div class="col-md-5">
+                <div class="info">
+                    <ul class="list-unstyled">
+                        <li><strong>Alamat:</strong><br> Dusun Cibgor RT 02/RW 01, Desa Panawangan, Kec. Panawangan, Kab. Ciamis, Jawa Barat, 46255</li>
+                        <li><strong>Telepon:</strong><br> <a href="https://wa.me/6288971839703" target="_blank">+62 821-2756-0921</a></li>
+                        <li><strong>Email:</strong><br> <a href="mailto:rfasya957@gmail.com">rfasya957@gmail.com</a></li>
+                    </ul>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.3987813492698!2d108.38102631412754!3d-7.128131583684763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f41adcced2d57%3A0xb8d689e8e07b9c25!2sCibogor!5e0!3m2!1sen!2sid!4v1760590137281!5m2!1sen!2sid"
+                        width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+    <!-- ==== FOOTER ==== -->
+    <div id="fh5co-footer">
+        <div class="container text-center">
+            <p>© 2025 Rahma Fasya Soleha.</p>
+        </div>
+    </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.easypiechart.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
